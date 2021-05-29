@@ -1,4 +1,13 @@
 module.exports = {
+  compilers: {
+    solc: {
+      version: "0.6.8",
+      optimizer: {
+        enabled: true,
+        runs: 200
+      }
+    },
+  },
   networks: {
     development: {
       host: "127.0.0.1",
@@ -6,10 +15,5 @@ module.exports = {
       network_id: "*" // Match any network id
     }
   },
-  solc: {
-    optimizer: {
-      enabled: true,
-      runs: 200
-    }
-  }
+  
 }
