@@ -105,6 +105,9 @@ class _HomeState extends State<Home> {
 
             if (state is TrainState) {
               var result = state.good_or_bad;
+              if (result == 1) {
+                _loadDialog();
+              }
               //Akshat iske basis pr call krna hai
             }
             return buildBody();
