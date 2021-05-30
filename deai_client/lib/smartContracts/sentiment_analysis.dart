@@ -60,7 +60,7 @@ class NewContractLinking  {
      "function initializeSparseWeights(int80[])",
      "function norm(uint256)",
      "function predict(int64[]) view returns (uint64)",
-     "function update(int64[],uint64)",
+     "function update(int64[],uint64) payable returns (uint64)",
      "function evaluateBatch(uint24[60][],uint64[]) view returns(uint256)"
     ];
    _newContract = Contract(_contractAddress, _contractAbi, provider);
@@ -102,19 +102,18 @@ class NewContractLinking  {
   }
 
    train(String message,int classification) async {
+    
+  var _contract = await _newContract.connect(provider.getSigner());
     var encoder = jsonDecode(  await rootBundle.loadString("assets/imdb.json"));
   
     var tokens = message.split(" ");
     var encodings=[];
-    var hex = [];
     await tokens.forEach((element)=>encodings.add(int.parse(encoder[element.toLowerCase()].toString()!=null?encoder[element.toLowerCase()].toString():"1337",radix:16)));
-    
-      var res =
-    await promiseToFuture(callMethod(_newContract, "update", [
-    message,classification
-    ]));
-     int val;
-    await res.then((value) => val = (int.parse(value.toString())));
+    print(encodings);
+      dynamic res = await promiseToFuture(callMethod(_contract, "update", [encodings,classification ]));
+     int val=1;
+    //await res.then((value) => print(int.parse(value.toString())));
+    print(int.parse(res.toString()));
     return val;
   }
 

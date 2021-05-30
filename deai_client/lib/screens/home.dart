@@ -79,6 +79,16 @@ class _HomeState extends State<Home> {
         {
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(state.error),));
         }
+        if(state is TrainState){
+            var result = state.good_or_bad;
+            String mes;
+            if(result == 1)
+              mes = "Good data submitted. Get ready to receive your poap badges";
+            else
+              mes = "Bad data submitted";
+ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(mes),));
+        
+                }
         
         },)
       )
@@ -168,8 +178,9 @@ class _HomeState extends State<Home> {
                                 primary: Colors.green,
                               ),
                               onPressed: () {
-                                int classificaion = isSelected[0]?1:0;
-                                CubitProvider.of<ContractCubit>(context).train(trainController.text,classificaion);
+                                int classification = isSelected[0]?1:0;
+                                print(classification);
+                                CubitProvider.of<ContractCubit>(context).train(trainController.text,classification);
                                
                                 
                                                               },
