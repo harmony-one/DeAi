@@ -113,7 +113,7 @@ class NewContractLinking  {
       dynamic res = await promiseToFuture(callMethod(_contract, "update", [encodings,classification ]));
      int val=1;
     //await res.then((value) => print(int.parse(value.toString())));
-    print(int.parse(res.toString()));
+   // print(int.parse(res.toString()));
     return val;
   }
 
