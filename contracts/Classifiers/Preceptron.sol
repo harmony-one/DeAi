@@ -81,7 +81,7 @@ contract Perceptron is Classifier64 {
         }
     }
 
-    function update(int64[] memory data, uint64 classification) public override onlyOwner {
+    function update(int64[] memory data, uint64 classification) public override payable returns (uint64){
         uint len = data.length;
         require(len == weights.length, "The data must have the same dimension as the weights.");
 

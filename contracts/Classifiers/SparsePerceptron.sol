@@ -94,7 +94,7 @@ contract SparsePerceptron is Classifier64 {
         }
     }
 
-    function update(int64[] memory data, uint64 classification) public override onlyOwner {
+    function update(int64[] memory data, uint64 classification) public override payable returns (uint64) {
         // `data` holds the indices of the features that are present.
         uint64 prediction = predict(data);
         if (prediction != classification) {
@@ -113,7 +113,9 @@ contract SparsePerceptron is Classifier64 {
                     weights[uint64(data[i])] -= learningRate;
                 }
             }
+            return 1;
         }
+        return 0;
     }
 
     /**

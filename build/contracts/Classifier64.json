@@ -169,18 +169,24 @@
         }
       ],
       "name": "update",
-      "outputs": [],
-      "stateMutability": "nonpayable",
+      "outputs": [
+        {
+          "internalType": "uint64",
+          "name": "",
+          "type": "uint64"
+        }
+      ],
+      "stateMutability": "payable",
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.8+commit.0bbfe453\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint32[]\",\"name\":\"_featureIndices\",\"type\":\"uint32[]\"}],\"name\":\"addFeatureIndices\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"classifications\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"featureIndices\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getNumClassifications\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getNumFeatureIndices\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int64[]\",\"name\":\"data\",\"type\":\"int64[]\"}],\"name\":\"norm\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int64[]\",\"name\":\"data\",\"type\":\"int64[]\"}],\"name\":\"predict\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"toFloat\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int64[]\",\"name\":\"data\",\"type\":\"int64[]\"},{\"internalType\":\"uint64\",\"name\":\"classification\",\"type\":\"uint64\"}],\"name\":\"update\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"addFeatureIndices(uint32[])\":{\"params\":{\"_featureIndices\":\"The feature indices to append to the array held by this contract.\"}},\"getNumClassifications()\":{\"returns\":{\"_0\":\"The number of possible classifications that can be predicted.\"}},\"getNumFeatureIndices()\":{\"returns\":{\"_0\":\"The number of feature indices to use. 0 means to use all feature from the encoding.\"}},\"norm(int64[])\":{\"params\":{\"data\":\"A single sample.\"},\"returns\":{\"_0\":\"The normalization scalar for `data`.\"}},\"predict(int64[])\":{\"params\":{\"data\":\"A single sample.\"},\"returns\":{\"_0\":\"The predicted classification/label for `data`.\"}},\"update(int64[],uint64)\":{\"params\":{\"classification\":\"The label for `data`.\",\"data\":\"The training data or features.\"}}}},\"userdoc\":{\"methods\":{\"addFeatureIndices(uint32[])\":{\"notice\":\"Add more feature indices to take from the encoded result. Made to be called just after the contract is created and never again.\"},\"update(int64[],uint64)\":{\"notice\":\"Train the classifier with one data sample.\"}},\"notice\":\"A `Classifier` for data with 64-bit values.\"}},\"settings\":{\"compilationTarget\":{\"/home/starlord/Desktop/DeAi/contracts/Classifiers/Classifier.sol\":\"Classifier64\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/starlord/Desktop/DeAi/contracts/Classifiers/Classifier.sol\":{\"keccak256\":\"0x9fd29ee205a3b41f2c8e7741f4e1a357158b949bf7057335b27d9b4e67e17231\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://52acb496926ad527fc024b444b3ab991bc0a2ab34ac05f414b3ec6df0e49c5e2\",\"dweb:/ipfs/QmamCAEQadWqZNmwxPXacu3sjAA7KN57GDGHVUpt6uxaoB\"]},\"/home/starlord/Desktop/DeAi/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0x22ed883f6168f4c39ca54c7818db104316c616426db560ab4bf48289e46abb4b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://808e1603e3665406f78124146c44d408258b1f341ae2952b6589dca4351d3b10\",\"dweb:/ipfs/QmUHHvAfNTivC1sKpX4Go9umcStErCDxdz3h4kNDS2KHk1\"]},\"/home/starlord/Desktop/DeAi/lib/SafeMath.sol\":{\"keccak256\":\"0xa43cee4f836fede8f9525293ac4a3b0b4b75ebf1c7b4de85ce7dbc66c105944c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a7aa5941ba5c10df69d63d9e95a6bf676a3346e6e659dff00d386c83e9bddf04\",\"dweb:/ipfs/QmR8J6YkbKRg3Cq8wDzBvtAMVu7whJatCiMvgafyNBRMWi\"]},\"/home/starlord/Desktop/DeAi/lib/SignedSafeMath.sol\":{\"keccak256\":\"0xb1e01b73e0c893b6f9065d14b92100b31e4504d62f8f8c5df62be354a544e08d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://55cf55b26cb60d1d9d795a6bed6254a0fad238b5986aa01d3eabdb1957fd1d25\",\"dweb:/ipfs/QmTGvrkUrMCXP7u8BGNdjnH5ciaqJZZfWB4UZeNQCBqMkM\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.8+commit.0bbfe453\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint32[]\",\"name\":\"_featureIndices\",\"type\":\"uint32[]\"}],\"name\":\"addFeatureIndices\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"classifications\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"featureIndices\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getNumClassifications\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getNumFeatureIndices\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int64[]\",\"name\":\"data\",\"type\":\"int64[]\"}],\"name\":\"norm\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int64[]\",\"name\":\"data\",\"type\":\"int64[]\"}],\"name\":\"predict\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"toFloat\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int64[]\",\"name\":\"data\",\"type\":\"int64[]\"},{\"internalType\":\"uint64\",\"name\":\"classification\",\"type\":\"uint64\"}],\"name\":\"update\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"addFeatureIndices(uint32[])\":{\"params\":{\"_featureIndices\":\"The feature indices to append to the array held by this contract.\"}},\"getNumClassifications()\":{\"returns\":{\"_0\":\"The number of possible classifications that can be predicted.\"}},\"getNumFeatureIndices()\":{\"returns\":{\"_0\":\"The number of feature indices to use. 0 means to use all feature from the encoding.\"}},\"norm(int64[])\":{\"params\":{\"data\":\"A single sample.\"},\"returns\":{\"_0\":\"The normalization scalar for `data`.\"}},\"predict(int64[])\":{\"params\":{\"data\":\"A single sample.\"},\"returns\":{\"_0\":\"The predicted classification/label for `data`.\"}},\"update(int64[],uint64)\":{\"params\":{\"classification\":\"The label for `data`.\",\"data\":\"The training data or features.\"}}}},\"userdoc\":{\"methods\":{\"addFeatureIndices(uint32[])\":{\"notice\":\"Add more feature indices to take from the encoded result. Made to be called just after the contract is created and never again.\"},\"update(int64[],uint64)\":{\"notice\":\"Train the classifier with one data sample.\"}},\"notice\":\"A `Classifier` for data with 64-bit values.\"}},\"settings\":{\"compilationTarget\":{\"/home/starlord/Desktop/DeAi/contracts/Classifiers/Classifier.sol\":\"Classifier64\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/starlord/Desktop/DeAi/contracts/Classifiers/Classifier.sol\":{\"keccak256\":\"0x256ba2af500a903e4f0196c9e80b60042b2473273852e104486ce5ca7ca991a5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d07c3c2d7f19a604f45006338583a9e8c9d76db86f82c432b098186681f90edd\",\"dweb:/ipfs/QmW5FCc1P6BjKvN5ZWDZYzcbJsh9WapkamGWkiz9Gg9K9R\"]},\"/home/starlord/Desktop/DeAi/contracts/ownership/Ownable.sol\":{\"keccak256\":\"0x22ed883f6168f4c39ca54c7818db104316c616426db560ab4bf48289e46abb4b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://808e1603e3665406f78124146c44d408258b1f341ae2952b6589dca4351d3b10\",\"dweb:/ipfs/QmUHHvAfNTivC1sKpX4Go9umcStErCDxdz3h4kNDS2KHk1\"]},\"/home/starlord/Desktop/DeAi/lib/SafeMath.sol\":{\"keccak256\":\"0xa43cee4f836fede8f9525293ac4a3b0b4b75ebf1c7b4de85ce7dbc66c105944c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a7aa5941ba5c10df69d63d9e95a6bf676a3346e6e659dff00d386c83e9bddf04\",\"dweb:/ipfs/QmR8J6YkbKRg3Cq8wDzBvtAMVu7whJatCiMvgafyNBRMWi\"]},\"/home/starlord/Desktop/DeAi/lib/SignedSafeMath.sol\":{\"keccak256\":\"0xb1e01b73e0c893b6f9065d14b92100b31e4504d62f8f8c5df62be354a544e08d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://55cf55b26cb60d1d9d795a6bed6254a0fad238b5986aa01d3eabdb1957fd1d25\",\"dweb:/ipfs/QmTGvrkUrMCXP7u8BGNdjnH5ciaqJZZfWB4UZeNQCBqMkM\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\npragma experimental ABIEncoderV2;\n\nimport \"../../lib/SafeMath.sol\";\nimport \"../../lib/SignedSafeMath.sol\";\n\nimport {Ownable} from \"../ownership/Ownable.sol\";\n\n/**\n * A classifier that can take a data sample as input and return a predict classification/label for the data.\n */\ncontract Classifier is Ownable {\n    /**\n     * The possible classifications that can be predicted.\n     * Prediction results are indices to values in this array.\n     */\n    string[] public classifications;\n\n    /**\n     * The indices of the features to use from some well-known shared encoder.\n     * If it is empty, then all features are used.\n     */\n    uint32[] public featureIndices;\n\n    /**\n     * Initialize a classifier.\n     * @param _classifications The possible classifications that can be predicted.\n     */\n    constructor(string[] memory _classifications)\n    Ownable()\n    public {\n        classifications = _classifications;\n    }\n\n    /**\n     * @return The number of possible classifications that can be predicted.\n     */\n    function getNumClassifications() public view returns (uint) {\n        return classifications.length;\n    }\n\n    /**\n     * Add more feature indices to take from the encoded result.\n     * Made to be called just after the contract is created and never again.\n     * @param _featureIndices The feature indices to append to the array held by this contract.\n     */\n    function addFeatureIndices(uint32[] memory _featureIndices) public onlyOwner {\n        for (uint32 i = 0; i < _featureIndices.length; ++i) {\n            featureIndices.push(_featureIndices[i]);\n        }\n    }\n\n    /**\n     * @return The number of feature indices to use. 0 means to use all feature from the encoding.\n     */\n    function getNumFeatureIndices() public view returns (uint) {\n        return featureIndices.length;\n    }\n}\n\n/**\n * A `Classifier` for data with 64-bit values.\n */\n// Use an abstract contract instead of an interface so that we can enforce internal functions\n// and not be forced to have some external.\nabstract contract Classifier64 is Classifier {\n    using SafeMath for uint256;\n    using SignedSafeMath for int256;\n\n    /**\n     * Number of decimal places precision.\n     * Since Solidity does not support floating point numbers,\n     * we assume certain numbers have been multiplied by this value.\n     */\n    uint32 constant public toFloat = 1E9;\n\n    constructor(string[] memory _classifications)\n    Classifier(_classifications)\n    internal {\n        // solium-disable-previous-line no-empty-blocks\n    }\n\n    /**\n     * @param data A single sample.\n     * @return The normalization scalar for `data`.\n     */\n    function norm(int64[] memory data) public virtual pure returns (uint);\n\n    /**\n     * @param data A single sample.\n     * @return The predicted classification/label for `data`.\n     */\n    function predict(int64[] memory data) public virtual view returns (uint64);\n\n    /**\n     * Train the classifier with one data sample.\n     *\n     * @param data The training data or features.\n     * @param classification The label for `data`.\n     */\n    function update(int64[] memory data, uint64 classification) public virtual;\n}\n",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\npragma experimental ABIEncoderV2;\n\nimport \"../../lib/SafeMath.sol\";\nimport \"../../lib/SignedSafeMath.sol\";\n\nimport {Ownable} from \"../ownership/Ownable.sol\";\n\n/**\n * A classifier that can take a data sample as input and return a predict classification/label for the data.\n */\ncontract Classifier is Ownable {\n    /**\n     * The possible classifications that can be predicted.\n     * Prediction results are indices to values in this array.\n     */\n    string[] public classifications;\n\n    /**\n     * The indices of the features to use from some well-known shared encoder.\n     * If it is empty, then all features are used.\n     */\n    uint32[] public featureIndices;\n\n    /**\n     * Initialize a classifier.\n     * @param _classifications The possible classifications that can be predicted.\n     */\n    constructor(string[] memory _classifications)\n    Ownable()\n    public {\n        classifications = _classifications;\n    }\n\n    /**\n     * @return The number of possible classifications that can be predicted.\n     */\n    function getNumClassifications() public view returns (uint) {\n        return classifications.length;\n    }\n\n    /**\n     * Add more feature indices to take from the encoded result.\n     * Made to be called just after the contract is created and never again.\n     * @param _featureIndices The feature indices to append to the array held by this contract.\n     */\n    function addFeatureIndices(uint32[] memory _featureIndices) public onlyOwner {\n        for (uint32 i = 0; i < _featureIndices.length; ++i) {\n            featureIndices.push(_featureIndices[i]);\n        }\n    }\n\n    /**\n     * @return The number of feature indices to use. 0 means to use all feature from the encoding.\n     */\n    function getNumFeatureIndices() public view returns (uint) {\n        return featureIndices.length;\n    }\n}\n\n/**\n * A `Classifier` for data with 64-bit values.\n */\n// Use an abstract contract instead of an interface so that we can enforce internal functions\n// and not be forced to have some external.\nabstract contract Classifier64 is Classifier {\n    using SafeMath for uint256;\n    using SignedSafeMath for int256;\n\n    /**\n     * Number of decimal places precision.\n     * Since Solidity does not support floating point numbers,\n     * we assume certain numbers have been multiplied by this value.\n     */\n    uint32 constant public toFloat = 1E9;\n\n    constructor(string[] memory _classifications)\n    Classifier(_classifications)\n    internal {\n        // solium-disable-previous-line no-empty-blocks\n    }\n\n    /**\n     * @param data A single sample.\n     * @return The normalization scalar for `data`.\n     */\n    function norm(int64[] memory data) public virtual pure returns (uint);\n\n    /**\n     * @param data A single sample.\n     * @return The predicted classification/label for `data`.\n     */\n    function predict(int64[] memory data) public virtual view returns (uint64);\n\n    /**\n     * Train the classifier with one data sample.\n     *\n     * @param data The training data or features.\n     * @param classification The label for `data`.\n     */\n    function update(int64[] memory data, uint64 classification) public virtual payable returns (uint64);\n}\n",
   "sourcePath": "/home/starlord/Desktop/DeAi/contracts/Classifiers/Classifier.sol",
   "ast": {
     "absolutePath": "/home/starlord/Desktop/DeAi/contracts/Classifiers/Classifier.sol",
@@ -189,10 +195,10 @@
         81
       ],
       "Classifier64": [
-        131
+        133
       ]
     },
-    "id": 132,
+    "id": 134,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
@@ -224,8 +230,8 @@
         "file": "../../lib/SafeMath.sol",
         "id": 3,
         "nodeType": "ImportDirective",
-        "scope": 132,
-        "sourceUnit": 908,
+        "scope": 134,
+        "sourceUnit": 1315,
         "src": "100:32:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -235,8 +241,8 @@
         "file": "../../lib/SignedSafeMath.sol",
         "id": 4,
         "nodeType": "ImportDirective",
-        "scope": 132,
-        "sourceUnit": 1087,
+        "scope": 134,
+        "sourceUnit": 1494,
         "src": "133:38:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -246,8 +252,8 @@
         "file": "../ownership/Ownable.sol",
         "id": 6,
         "nodeType": "ImportDirective",
-        "scope": 132,
-        "sourceUnit": 655,
+        "scope": 134,
+        "sourceUnit": 1062,
         "src": "173:49:0",
         "symbolAliases": [
           {
@@ -279,10 +285,10 @@
               "id": 8,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 654,
+              "referencedDeclaration": 1061,
               "src": "364:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$654",
+                "typeIdentifier": "t_contract$_Ownable_$1061",
                 "typeString": "contract Ownable"
               }
             },
@@ -292,7 +298,7 @@
           }
         ],
         "contractDependencies": [
-          654
+          1061
         ],
         "contractKind": "contract",
         "documentation": {
@@ -305,7 +311,7 @@
         "id": 81,
         "linearizedBaseContracts": [
           81,
-          654
+          1061
         ],
         "name": "Classifier",
         "nodeType": "ContractDefinition",
@@ -461,10 +467,10 @@
                   "name": "Ownable",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 654,
+                  "referencedDeclaration": 1061,
                   "src": "918:7:0",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_type$_t_contract$_Ownable_$654_$",
+                    "typeIdentifier": "t_type$_t_contract$_Ownable_$1061_$",
                     "typeString": "type(contract Ownable)"
                   }
                 },
@@ -925,7 +931,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 631,
+                  "referencedDeclaration": 1038,
                   "src": "1522:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1101,7 +1107,7 @@
             "visibility": "public"
           }
         ],
-        "scope": 132,
+        "scope": 134,
         "src": "341:1550:0"
       },
       {
@@ -1128,7 +1134,7 @@
         ],
         "contractDependencies": [
           81,
-          654
+          1061
         ],
         "contractKind": "contract",
         "documentation": {
@@ -1138,11 +1144,11 @@
           "text": "A `Classifier` for data with 64-bit values."
         },
         "fullyImplemented": false,
-        "id": 131,
+        "id": 133,
         "linearizedBaseContracts": [
-          131,
+          133,
           81,
-          654
+          1061
         ],
         "name": "Classifier64",
         "nodeType": "ContractDefinition",
@@ -1154,10 +1160,10 @@
               "id": 85,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 907,
+              "referencedDeclaration": 1314,
               "src": "2143:8:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$907",
+                "typeIdentifier": "t_contract$_SafeMath_$1314",
                 "typeString": "library SafeMath"
               }
             },
@@ -1181,10 +1187,10 @@
               "id": 88,
               "name": "SignedSafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1086,
+              "referencedDeclaration": 1493,
               "src": "2175:14:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SignedSafeMath_$1086",
+                "typeIdentifier": "t_contract$_SignedSafeMath_$1493",
                 "typeString": "library SignedSafeMath"
               }
             },
@@ -1209,7 +1215,7 @@
             "name": "toFloat",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 131,
+            "scope": 133,
             "src": "2398:36:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1347,7 +1353,7 @@
               "parameters": [],
               "src": "2533:0:0"
             },
-            "scope": 131,
+            "scope": 133,
             "src": "2441:155:0",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1449,7 +1455,7 @@
               ],
               "src": "2769:6:0"
             },
-            "scope": 131,
+            "scope": 133,
             "src": "2706:70:0",
             "stateMutability": "pure",
             "virtual": true,
@@ -1551,7 +1557,7 @@
               ],
               "src": "2962:8:0"
             },
-            "scope": 131,
+            "scope": 133,
             "src": "2896:75:0",
             "stateMutability": "view",
             "virtual": true,
@@ -1566,7 +1572,7 @@
               "text": "Train the classifier with one data sample.\n     * @param data The training data or features.\n@param classification The label for `data`."
             },
             "functionSelector": "bd7a1d61",
-            "id": 130,
+            "id": 132,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1584,7 +1590,7 @@
                   "name": "data",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 130,
+                  "scope": 132,
                   "src": "3167:19:0",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1622,7 +1628,7 @@
                   "name": "classification",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 130,
+                  "scope": 132,
                   "src": "3188:21:0",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1647,23 +1653,52 @@
               "src": "3166:44:0"
             },
             "returnParameters": {
-              "id": 129,
+              "id": 131,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "3225:0:0"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 130,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 132,
+                  "src": "3243:6:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 129,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3243:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3242:8:0"
             },
-            "scope": 131,
-            "src": "3151:75:0",
-            "stateMutability": "nonpayable",
+            "scope": 133,
+            "src": "3151:100:0",
+            "stateMutability": "payable",
             "virtual": true,
             "visibility": "public"
           }
         ],
-        "scope": 132,
-        "src": "2086:1142:0"
+        "scope": 134,
+        "src": "2086:1167:0"
       }
     ],
-    "src": "32:3197:0"
+    "src": "32:3222:0"
   },
   "legacyAST": {
     "attributes": {
@@ -1673,7 +1708,7 @@
           81
         ],
         "Classifier64": [
-          131
+          133
         ]
       },
       "license": "MIT"
@@ -1708,10 +1743,10 @@
       },
       {
         "attributes": {
-          "SourceUnit": 908,
+          "SourceUnit": 1315,
           "absolutePath": "/home/starlord/Desktop/DeAi/lib/SafeMath.sol",
           "file": "../../lib/SafeMath.sol",
-          "scope": 132,
+          "scope": 134,
           "symbolAliases": [
             null
           ],
@@ -1723,10 +1758,10 @@
       },
       {
         "attributes": {
-          "SourceUnit": 1087,
+          "SourceUnit": 1494,
           "absolutePath": "/home/starlord/Desktop/DeAi/lib/SignedSafeMath.sol",
           "file": "../../lib/SignedSafeMath.sol",
-          "scope": 132,
+          "scope": 134,
           "symbolAliases": [
             null
           ],
@@ -1738,10 +1773,10 @@
       },
       {
         "attributes": {
-          "SourceUnit": 655,
+          "SourceUnit": 1062,
           "absolutePath": "/home/starlord/Desktop/DeAi/contracts/ownership/Ownable.sol",
           "file": "../ownership/Ownable.sol",
-          "scope": 132,
+          "scope": 134,
           "symbolAliases": [
             {
               "foreign": {
@@ -1771,16 +1806,16 @@
         "attributes": {
           "abstract": false,
           "contractDependencies": [
-            654
+            1061
           ],
           "contractKind": "contract",
           "fullyImplemented": true,
           "linearizedBaseContracts": [
             81,
-            654
+            1061
           ],
           "name": "Classifier",
-          "scope": 132
+          "scope": 134
         },
         "children": [
           {
@@ -1800,7 +1835,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "Ownable",
-                  "referencedDeclaration": 654,
+                  "referencedDeclaration": 1061,
                   "type": "contract Ownable"
                 },
                 "id": 8,
@@ -1983,7 +2018,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 654,
+                      "referencedDeclaration": 1061,
                       "type": "type(contract Ownable)",
                       "value": "Ownable"
                     },
@@ -2273,7 +2308,7 @@
                       "overloadedDeclarations": [
                         null
                       ],
-                      "referencedDeclaration": 631,
+                      "referencedDeclaration": 1038,
                       "type": "modifier ()",
                       "value": "onlyOwner"
                     },
@@ -2713,17 +2748,17 @@
           "abstract": true,
           "contractDependencies": [
             81,
-            654
+            1061
           ],
           "contractKind": "contract",
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            131,
+            133,
             81,
-            654
+            1061
           ],
           "name": "Classifier64",
-          "scope": 132
+          "scope": 134
         },
         "children": [
           {
@@ -2761,7 +2796,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "SafeMath",
-                  "referencedDeclaration": 907,
+                  "referencedDeclaration": 1314,
                   "type": "library SafeMath"
                 },
                 "id": 85,
@@ -2788,7 +2823,7 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "SignedSafeMath",
-                  "referencedDeclaration": 1086,
+                  "referencedDeclaration": 1493,
                   "type": "library SignedSafeMath"
                 },
                 "id": 88,
@@ -2816,7 +2851,7 @@
               "mutability": "constant",
               "name": "toFloat",
               "overrides": null,
-              "scope": 131,
+              "scope": 133,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "uint32",
@@ -2862,7 +2897,7 @@
               "kind": "constructor",
               "name": "",
               "overrides": null,
-              "scope": 131,
+              "scope": 133,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "internal"
@@ -2988,7 +3023,7 @@
               ],
               "name": "norm",
               "overrides": null,
-              "scope": 131,
+              "scope": 133,
               "stateMutability": "pure",
               "virtual": true,
               "visibility": "public"
@@ -3100,7 +3135,7 @@
               ],
               "name": "predict",
               "overrides": null,
-              "scope": 131,
+              "scope": 133,
               "stateMutability": "view",
               "virtual": true,
               "visibility": "public"
@@ -3212,8 +3247,8 @@
               ],
               "name": "update",
               "overrides": null,
-              "scope": 131,
-              "stateMutability": "nonpayable",
+              "scope": 133,
+              "stateMutability": "payable",
               "virtual": true,
               "visibility": "public"
             },
@@ -3234,7 +3269,7 @@
                       "mutability": "mutable",
                       "name": "data",
                       "overrides": null,
-                      "scope": 130,
+                      "scope": 132,
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "type": "int64[]",
@@ -3273,7 +3308,7 @@
                       "mutability": "mutable",
                       "name": "classification",
                       "overrides": null,
-                      "scope": 130,
+                      "scope": 132,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint64",
@@ -3301,30 +3336,54 @@
                 "src": "3166:44:0"
               },
               {
-                "attributes": {
-                  "parameters": [
-                    null
-                  ]
-                },
-                "children": [],
-                "id": 129,
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 132,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint64",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint64",
+                          "type": "uint64"
+                        },
+                        "id": 129,
+                        "name": "ElementaryTypeName",
+                        "src": "3243:6:0"
+                      }
+                    ],
+                    "id": 130,
+                    "name": "VariableDeclaration",
+                    "src": "3243:6:0"
+                  }
+                ],
+                "id": 131,
                 "name": "ParameterList",
-                "src": "3225:0:0"
+                "src": "3242:8:0"
               }
             ],
-            "id": 130,
+            "id": 132,
             "name": "FunctionDefinition",
-            "src": "3151:75:0"
+            "src": "3151:100:0"
           }
         ],
-        "id": 131,
+        "id": 133,
         "name": "ContractDefinition",
-        "src": "2086:1142:0"
+        "src": "2086:1167:0"
       }
     ],
-    "id": 132,
+    "id": 134,
     "name": "SourceUnit",
-    "src": "32:3197:0"
+    "src": "32:3222:0"
   },
   "compiler": {
     "name": "solc",
@@ -3332,7 +3391,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.1",
-  "updatedAt": "2021-05-28T14:43:39.602Z",
+  "updatedAt": "2021-05-30T14:24:13.734Z",
   "devdoc": {
     "methods": {
       "addFeatureIndices(uint32[])": {

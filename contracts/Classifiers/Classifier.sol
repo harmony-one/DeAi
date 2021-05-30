@@ -99,5 +99,5 @@ abstract contract Classifier64 is Classifier {
      * @param data The training data or features.
      * @param classification The label for `data`.
      */
-    function update(int64[] memory data, uint64 classification) public virtual;
+    function update(int64[] memory data, uint64 classification) public virtual payable returns (uint64);
 }
