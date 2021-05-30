@@ -67,6 +67,11 @@ class _HomeState extends State<Home> {
               prediction = state.result==1?"Postive":"Negative";
            
           }
+
+          if(state is TrainState){
+            var result = state.good_or_bad;
+            //Akshat iske basis pr call krna hai
+          }
         return buildBody();
         
       }, listener: ( context, state) {
